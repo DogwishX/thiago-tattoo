@@ -1,0 +1,45 @@
+html {
+	background-color: #000;
+	overflow: hidden;
+}
+
+/*        Header         */
+ul {
+	padding: 0;
+}
+
+.nav-bar ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-bar li {
+	margin: 0 1rem;
+}
+/* Logo */
+.logo img {
+	height: 3rem;
+	width: 3rem;
+}
+
+/* Hamburger Menu animations + style */
+.hamburger-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+.top-line,
+.bot-line {
+	height: 1px;
+	background-color: white;
+	width: 15px;
+	margin: 2px auto;
+}
+
+.mid-line {
+	width: 20px;
+	height: 1px;
+	margin: 2px;
+	background-color: white;
+}
