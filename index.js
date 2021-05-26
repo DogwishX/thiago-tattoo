@@ -7,7 +7,7 @@ const addMenuIconAnimation = () => {
 
 const addParallaxAnimation = () => {
 	let backgroundImage = document.querySelector(".hero");
-	let speed = 7;
+	let speed = 10;
 	backgroundImage.addEventListener("mousemove", ({ pageX, pageY }) => {
 		let x = (window.innerWidth - pageX * speed) / 100;
 		let y = (window.innerWidth - pageY * speed) / 100;
