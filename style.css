@@ -1,4 +1,4 @@
-html {
+* {
 	color: #fff;
 	font-family: "Mate SC", serif;
 }
@@ -86,7 +86,7 @@ li.menu-items {
 
 .menu-icon {
 	width: 20px;
-	height: 1px;
+	height: 0.5px;
 	background-color: white;
 	transition: all ease-in-out 0.5s;
 }
@@ -95,7 +95,7 @@ li.menu-items {
 .menu-icon::after {
 	content: "";
 	position: absolute;
-	height: 1px;
+	height: 0.5px;
 	background-color: white;
 	width: 15px;
 	transition: all ease-in-out 0.5s;
@@ -106,6 +106,10 @@ li.menu-items {
 }
 .menu-icon::after {
 	transform: translate(17.5%, 5px);
+}
+.open-menu .menu-icon::before,
+.open-menu .menu-icon::after {
+	height: 1px;
 }
 
 .open-menu .menu-icon::before {
@@ -138,5 +142,5 @@ li.menu-items {
 	background: center center fixed no-repeat
 		url("https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/06/23/Health-Environment-Science/Images/iStock-502456958.JPG?t=20170517");
 	background-size: cover;
-	box-shadow: 10px 10px 20vh 20vh black inset;
+	box-shadow: 10px 10px 20vh 20vw black inset;
 }
