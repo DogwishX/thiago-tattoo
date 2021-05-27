@@ -15,10 +15,11 @@ const handleMenuIcon = () => {
 
 const parallaxAnimation = () => {
 	let backgroundImage = document.querySelector(".hero");
-	let smoothness = 10;
-	backgroundImage.addEventListener("mousemove", ({ offsetY, offsetX }) => {
-		backgroundImage.style.backgroundPositionX = -offsetX / smoothness + "px";
-		backgroundImage.style.backgroundPositionY = -offsetY / smoothness + "px";
+	let speed = 10;
+	backgroundImage.addEventListener("mousemove", ({ pageX, pageY }) => {
+		let x = (window.innerWidth - pageX * speed) / 100;
+		let y = (window.innerWidth - pageY * speed) / 100;
+		backgroundImage.style.transform = `translate(${x}px, ${y}px)`;
 	});
 };
 
