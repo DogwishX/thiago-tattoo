@@ -36,9 +36,12 @@ ul {
 	font-weight: 100;
 }
 
-.name hr {
-	height: 0.1px;
+.name .underline {
+	height: 1px;
 	margin: 0;
+	width: 50%;
+	margin: 0 auto;
+	background-color: #fff;
 }
 
 /* Menu Items */
@@ -142,5 +145,6 @@ li.menu-items {
 	background: center center fixed no-repeat
 		url("https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/06/23/Health-Environment-Science/Images/iStock-502456958.JPG?t=20170517");
 	background-size: cover;
+	background-position-y: 4rem;
 	box-shadow: 10px 10px 20vh 20vw black inset;
 }
