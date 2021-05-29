@@ -1,19 +1,19 @@
-const handleMenuIcon = () => {
-	const menuIcon = document.querySelector(".hamburger-menu");
-	const menuItems = document.querySelector(".menu-items");
-	let menuOpen = false;
+// 											Variables 											//
+// Menu Icon //
+const menuIcon = document.querySelector(".hamburger-menu");
+const menuItems = document.querySelector(".menu-items");
+let isMenuOpen = false;
 
-	menuIcon.addEventListener("click", () => {
-		menuIcon.classList.toggle("open-menu");
-		console.log(menuItems.style.opacity);
-		menuOpen = !menuOpen;
-		menuOpen
-			? ((menuItems.style.opacity = 0.95), (menuItems.style.zIndex = 1))
-			: ((menuItems.style.opacity = 0), (menuItems.style.zIndex = -1));
-	});
+// Functions
+const openMenu = () => {
+	menuIcon.classList.toggle("open-menu");
+	isMenuOpen = !isMenuOpen;
+	isMenuOpen
+		? ((menuItems.style.opacity = 0.95), (menuItems.style.zIndex = 1))
+		: ((menuItems.style.opacity = 0), (menuItems.style.zIndex = -1));
 };
 
-const parallaxAnimation = () => {
+const backgroundParallax = () => {
 	let backgroundImage = document.querySelector(".hero");
 	let speed = 10;
 	backgroundImage.addEventListener("mousemove", ({ pageX, pageY }) => {
@@ -23,5 +23,6 @@ const parallaxAnimation = () => {
 	});
 };
 
-handleMenuIcon();
-parallaxAnimation();
+// Execute functions
+backgroundParallax();
+menuIcon.addEventListener("click", openMenu);
