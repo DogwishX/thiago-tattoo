@@ -23,8 +23,8 @@ ul {
 	width: 2rem;
 }
 
-/* Name */
-.name {
+/* Company Name */
+.company-name {
 	color: #fff;
 	margin: 0;
 	font-weight: 100;
@@ -32,11 +32,11 @@ ul {
 	user-select: none;
 }
 
-.name h4 {
+.company-name h4 {
 	font-weight: 100;
 }
 
-.name .underline {
+.company-name .underline {
 	height: 1px;
 	margin: 0;
 	width: 50%;
@@ -131,10 +131,10 @@ li.menu-items {
 /* Hero */
 
 .hero-wrapper {
+	overflow: hidden;
 	background-color: #000;
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -147,4 +147,47 @@ li.menu-items {
 	background-size: cover;
 	background-position-y: 4rem;
 	box-shadow: 10px 10px 20vh 20vw black inset;
+}
+
+.scroll-arrow-wrap {
+	position: absolute;
+	bottom: 3%;
+	left: 50%;
+	height: 1rem;
+	width: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.scroll-arrow {
+	width: 2rem;
+	height: 3px;
+	background: transparent;
+}
+
+.scroll-arrow::before,
+.scroll-arrow::after {
+	content: "";
+	position: absolute;
+	height: 2.4px;
+	width: 0.7rem;
+	background-color: white;
+	opacity: 0.5;
+}
+
+.scroll-arrow::before {
+	/* transform: rotate(20deg) translateX(-43%);
+	border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px; */
+	transform: skewY(20deg);
+	right: 50%;
+}
+.scroll-arrow::after {
+	/* transform: rotate(-20deg) translateX(43%);
+	border-bottom-left-radius: 15px;
+	border-top-left-radius: 15px;
+	background: transparent; */
+	transform: skewY(-21deg);
+	left: 50%;
 }
