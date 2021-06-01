@@ -1,6 +1,9 @@
 * {
 	color: #fff;
-	font-family: "Mate SC", serif;
+	/*  */
+}
+html {
+	font-family: "Raleway", sans-serif;
 }
 
 /*        Header         */
@@ -25,14 +28,15 @@ ul {
 
 /* Company Name */
 .company-name {
+	display: inherit;
 	color: #fff;
-	margin: 0;
-	font-weight: 100;
-	padding: 0;
 	user-select: none;
+	font-family: "Mate SC", serif;
 }
 
 .company-name h4 {
+	margin: 0;
+	font-size: 1.5rem;
 	font-weight: 100;
 }
 
@@ -55,14 +59,13 @@ li.menu-items {
 	position: absolute;
 	background-color: #000;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	opacity: 0.9;
-	transition: all 0.5s;
-	z-index: -1;
+	transition: all 0.7s;
+	z-index: -2;
 }
 
 .menu-items a {
@@ -131,33 +134,81 @@ li.menu-items {
 /* Hero */
 
 .hero-wrapper {
-	overflow: hidden;
 	background-color: #000;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: -2;
+	overflow: hidden;
 }
-.hero {
+
+.hero-background {
 	height: 100%;
+	z-index: -1;
 	background: center center fixed no-repeat
-		url("https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/06/23/Health-Environment-Science/Images/iStock-502456958.JPG?t=20170517");
+		url("https://wallpapertag.com/wallpaper/full/a/8/9/141404-new-tattoo-backgrounds-2880x1800-mac.jpg");
 	background-size: cover;
-	background-position-y: 4rem;
+	background-position: -20rem -2rem;
 	box-shadow: 10px 10px 20vh 20vw black inset;
+	opacity: 0.25;
+}
+
+.call-to-action-wrap {
+	height: 1rem;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.welcome-text {
+	user-select: none;
+	font-weight: 900;
+}
+
+.buttons {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.buttons a {
+	padding: 0.8rem;
+	margin: 0.5rem;
+	width: 10rem;
+	border-radius: 2rem;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	background-color: white;
+	color: rgb(2, 2, 2);
+	font-size: 0.8rem;
+	font-weight: 900;
+	height: 100%;
+	border: solid white 2px;
+}
+
+.buttons a:hover {
+	color: white;
+	background: none;
 }
 
 .scroll-arrow-wrap {
 	position: absolute;
+	left: 0;
 	bottom: 3%;
-	left: 50%;
+	margin: 0;
 	height: 1rem;
-	width: 2rem;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	animation: scroll-arrow-animation ease-in-out 2s infinite;
 }
 
 .scroll-arrow {
@@ -177,17 +228,24 @@ li.menu-items {
 }
 
 .scroll-arrow::before {
-	/* transform: rotate(20deg) translateX(-43%);
-	border-bottom-right-radius: 15px;
-	border-top-right-radius: 15px; */
 	transform: skewY(20deg);
-	right: 50%;
+	right: 48%;
 }
 .scroll-arrow::after {
-	/* transform: rotate(-20deg) translateX(43%);
-	border-bottom-left-radius: 15px;
-	border-top-left-radius: 15px;
-	background: transparent; */
 	transform: skewY(-21deg);
-	left: 50%;
+	left: 52%;
+}
+
+@keyframes scroll-arrow-animation {
+	0%,
+	30% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
