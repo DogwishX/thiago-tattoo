@@ -150,7 +150,7 @@ li.menu-items {
 	background: center center fixed no-repeat
 		url("https://wallpapertag.com/wallpaper/full/a/8/9/141404-new-tattoo-backgrounds-2880x1800-mac.jpg");
 	background-size: cover;
-	background-position: -20rem -2rem;
+	background-position: -23rem -2rem;
 	box-shadow: 10px 10px 20vh 20vw black inset;
 	opacity: 0.25;
 }
@@ -241,7 +241,7 @@ li.menu-items {
 	30% {
 		transform: translateY(0);
 	}
-	50% {
+	60% {
 		transform: translateY(5px);
 	}
 	100% {
