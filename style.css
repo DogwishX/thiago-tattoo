@@ -1,5 +1,7 @@
 * {
 	color: #fff;
+	margin: 0;
+	padding: 0;
 	/*  */
 }
 html {
@@ -18,7 +20,7 @@ ul {
 }
 
 .nav-bar li {
-	margin: 0 2rem;
+	margin: 1rem 2rem;
 }
 /* Logo */
 .logo img {
@@ -147,11 +149,10 @@ li.menu-items {
 .hero-background {
 	height: 100%;
 	z-index: -1;
-	background: center center fixed no-repeat
-		url("https://wallpapertag.com/wallpaper/full/a/8/9/141404-new-tattoo-backgrounds-2880x1800-mac.jpg");
+	background: center center fixed no-repeat url(./media/maxresdefault.jpg);
 	background-size: cover;
-	background-position: -23rem -2rem;
-	box-shadow: 10px 10px 20vh 20vw black inset;
+	/* background-position: -23rem -2rem; */
+	box-shadow: 10px 10px 80px 40px black inset;
 	opacity: 0.25;
 }
 
@@ -248,4 +249,13 @@ li.menu-items {
 		opacity: 1;
 		transform: translateY(0px);
 	}
+}
+
+/* Gallery */
+.gallery {
+	position: absolute;
+	top: 100vh;
+	height: 20rem;
+	width: 100%;
+	background-color: #f0eff4;
 }
