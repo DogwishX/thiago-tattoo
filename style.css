@@ -149,9 +149,10 @@ li.menu-items {
 .hero-background {
 	height: 100%;
 	z-index: -1;
-	background: center center fixed no-repeat url(./media/maxresdefault.jpg);
+	background: center center fixed no-repeat
+		url(https://i1.wp.com/www.society19.com/wp-content/uploads/2018/05/man-bun-tatted.jpg?resize=502%2C665&ssl=1);
 	background-size: cover;
-	/* background-position: -23rem -2rem; */
+	background-position: 0 -2rem;
 	box-shadow: 10px 10px 80px 40px black inset;
 	opacity: 0.25;
 }
@@ -251,11 +252,25 @@ li.menu-items {
 	}
 }
 
-/* Gallery */
-.gallery {
+main {
 	position: absolute;
 	top: 100vh;
 	height: 20rem;
 	width: 100%;
 	background-color: #f0eff4;
+	display: flex;
+	justify-content: center;
+}
+
+.text {
+	margin-top: 10vh;
+	font-family: "DM Sans", sans-serif;
+	color: black;
+	text-align: center;
+	width: 50%;
+	font-size: 1.25rem;
+}
+
+/* Gallery */
+.gallery {
 }
