@@ -2,6 +2,7 @@
 	color: #fff;
 	margin: 0;
 	padding: 0;
+
 	/*  */
 }
 html {
@@ -9,16 +10,17 @@ html {
 }
 
 /*        Header         */
-ul {
-	padding: 0;
-	list-style: none;
+.nav-bar {
+	background-color: #000;
 }
+
 .nav-bar ul {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0;
+	list-style: none;
 }
-
 .nav-bar li {
 	margin: 1rem 2rem;
 }
@@ -137,9 +139,9 @@ li.menu-items {
 
 .hero-wrapper {
 	background-color: #000;
-	height: 100vh;
+
+	height: 90vh;
 	width: 100%;
-	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -2;
@@ -152,7 +154,7 @@ li.menu-items {
 	background: center center fixed no-repeat
 		url(https://i1.wp.com/www.society19.com/wp-content/uploads/2018/05/man-bun-tatted.jpg?resize=502%2C665&ssl=1);
 	background-size: cover;
-	background-position: 0 -2rem;
+	background-position: 0 rem;
 	box-shadow: 10px 10px 80px 40px black inset;
 	opacity: 0.25;
 }
@@ -253,17 +255,14 @@ li.menu-items {
 }
 
 main {
-	position: absolute;
-	top: 100vh;
-	height: 20rem;
-	width: 100%;
-	background-color: #f0eff4;
+	/* position: absolute; */
+	/* width: 100%; */
 	display: flex;
+	background-color: #f0eff4;
 	justify-content: center;
 }
 
 .text {
-	margin-top: 10vh;
 	font-family: "DM Sans", sans-serif;
 	color: black;
 	text-align: center;
@@ -272,5 +271,7 @@ main {
 }
 
 /* Gallery */
-.gallery {
+.gallery img {
+	top: 100vh;
+	width: 200px;
 }
