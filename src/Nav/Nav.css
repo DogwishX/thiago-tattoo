@@ -1,0 +1,87 @@
+.nav {
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+}
+
+.nav li {
+	cursor: pointer;
+}
+
+.nav-logo,
+.menu-icon {
+	margin: 0 10px;
+}
+
+.nav-logo {
+	height: auto;
+}
+
+.nav-logo img {
+	height: 50px;
+	width: 50px;
+}
+
+.name {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  transform: translate(-25%);
+  z-index: 2;
+}
+
+.name .underline {
+	height: 1px;
+	width: 70%;
+	background-color: white;
+}
+
+.menu-icon {
+  z-index: 2;
+}
+
+.menu-icon * {
+	background-color: white;
+	height: 2px;
+	width: 18px;
+	margin: 4px;
+	transition: all ease-in-out 0.5s;
+}
+
+.open-menu .menu-top {
+	transform: rotate(45deg) scale(1.5) translate(2.5px, 3px);
+	transition: all ease-in-out 0.5s;
+}
+.open-menu .menu-mid {
+	transform: scale(0.5) translate(-25px);
+	transition: all ease-in-out 0.5s;
+	opacity: 0;
+}
+
+.open-menu .menu-bot {
+	transform: rotate(-45deg) scale(1.5) translate(2.5px, -3px);
+	transition: all ease-in-out 0.5s;
+}
+
+
+.menu-items {
+  position: absolute;
+  top: -1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+  list-style: none;
+  height: 100vh;
+  width: 100%;
+  padding-left: 20px;
+  transition: all 1s;
+}
+
+.open-menu .menu-items  {
+  background-color: #0c0c0c;
+  top: 0;
+  z-index: 1;
+}
