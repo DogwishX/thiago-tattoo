@@ -1,4 +1,3 @@
-import './Hero.css';
 import Nav from '../Nav/Nav';
 
 function Hero() {
@@ -11,7 +10,12 @@ function Hero() {
 				</div>
 			</div>
 			<div className="hero-content">
-				<a className="learn-more">Learn More</a>
+				<div className="call-to-action">
+					<h4 className="welcome-text">
+						Welcome to Pinku Tattoo
+					</h4>
+					<a className="learn-more">Learn More</a>
+				</div>
 
 				<div class="scroll-arrow-wrap">
 					<a href="#" class="scroll-arrow"></a>

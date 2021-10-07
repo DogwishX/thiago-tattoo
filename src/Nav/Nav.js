@@ -1,4 +1,3 @@
-import './Nav.css';
 import logo from '../shared/white-logo.png';
 
 function Nav() {
