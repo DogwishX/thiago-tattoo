@@ -17,8 +17,8 @@ function Hero() {
 					<a className="learn-more">Learn More</a>
 				</div>
 
-				<div class="scroll-arrow-wrap">
-					<a href="#" class="scroll-arrow"></a>
+				<div className="scroll-arrow-wrap">
+					<a href="#" className="scroll-arrow"></a>
 				</div>
 			</div>
 		</>

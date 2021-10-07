@@ -4,10 +4,10 @@ import './LoadingScreen.css';
 function LoadingScreen() {
 	return (
 		<main className='loadingScreen'>
-			<img src={logo} class="logo" alt="logo" />
+			<img src={logo} className="logo" alt="logo" />
 			{/* Loading Animation */}
-			<div class='loading-animation'>
-				<div class="lds-ellipsis">
+			<div className='loading-animation'>
+				<div className="lds-ellipsis">
 					<div></div>
 					<div></div>
 					<div></div>
