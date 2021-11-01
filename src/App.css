@@ -17,7 +17,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: 	var(--primary-color);
+	color: var(--primary-color);
 }
 
 .hero-wrapper {
@@ -54,7 +54,7 @@ a {
 }
 
 .welcome-text {
-	color: 	white;
+	color: white;
 }
 
 .learn-more {
@@ -237,7 +237,7 @@ a {
 	text-align: center;
 	font-family: 'Permanent Marker', cursive;
 	font-size: 2.5rem;
-	color: #d2a200;
+	color: #fff;
 }
 
 .site-description__text {
@@ -250,4 +250,26 @@ a {
 	height: 400px;
 	width: 400px;
 	opacity: 0.4;
+}
+
+.gallery__wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.gallery__img {
+	box-sizing: content-box;
+	max-height: 60vh;
+	padding: 5px;
+	width: auto;
+	height: auto;
+}
+
+.move-btn{
+	position: absolute;
+	bottom: 0;
+}
+
+.move {
+	transform: translate(-100%);
 }

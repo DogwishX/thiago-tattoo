@@ -17,8 +17,8 @@ function App() {
 				<LoadingScreen />
 			) : (
 				<main>
-					<Hero />
-					<SiteDescription />
+					{/* <Hero />
+					<SiteDescription /> */}
 					<Gallery/>
 				</main>
 			)}

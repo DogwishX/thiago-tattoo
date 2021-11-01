@@ -1,34 +1,34 @@
+import { Carousel } from 'react-carousel-minimal';
+
 const media = [
-	'2.jpg',
-	'3.jpg',
-	'4.jpg',
-	'5.jpg',
-	'6.jpg',
-	'7.jpg',
-	'8.jpg',
-	'9.jpg',
-	'10.jpg',
-	'11.jpg',
+	{
+		image: process.env.PUBLIC_URL + '/media/2.jpg',
+	},
+	{
+		image: process.env.PUBLIC_URL + '/media/3.jpg',
+	},
+	{
+		image: process.env.PUBLIC_URL + '/media/5.jpg',
+	},
+	{
+		image: process.env.PUBLIC_URL + '/media/6.jpg',
+	},
+	{
+		image: process.env.PUBLIC_URL + '/media/7.jpg',
+	},
+	{
+		image: process.env.PUBLIC_URL + '/media/8.jpg',
+	},
+	{
+		image: process.env.PUBLIC_URL + '/media/10.jpg',
+	},
 ];
 
 function Gallery() {
-	return (
-		<>
-			<section className="gallery__wrapper">
-        <DisplayImages />
-      </section>
-		</>
-	);
+
+
+
 }
 
-function DisplayImages() {
-	return media.map((img) => (
-		<img
-			className="gallery__img"
-			src={process.env.PUBLIC_URL + '/media/' + img}
-			alt="Tattoo"
-		/>
-	));
-}
 
 export default Gallery;
