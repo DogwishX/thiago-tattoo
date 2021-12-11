@@ -1,20 +1,23 @@
 import "./Gallery.css";
 
 function Gallery({ images }) {
-  let previousFocusedImgId;
   function focusImage({ currentTarget }) {
-    currentTarget.parentNode.style = `transform: translateX(${
-      -currentTarget.width * currentTarget.id + currentTarget.width / 2
-    }px);`;
+    const middleOfScreen = window.innerWidth / 2;
+    const imgOffset =
+      -(currentTarget.width * currentTarget.id) +
+      middleOfScreen -
+      currentTarget.width / 2;
+      
+    const transformArgs = `transform: translateX(${imgOffset}px);`;
+
+    removeFocusFromImgs();
     currentTarget.classList.add("focused");
-    removeFocusPreviousImage(currentTarget.id);
+    currentTarget.parentNode.style = transformArgs;
   }
 
-  function removeFocusPreviousImage(currentFocusedImgId) {
+  function removeFocusFromImgs() {
     const imgDivs = document.querySelectorAll(".gallery__image");
-    previousFocusedImgId &&
-      imgDivs[previousFocusedImgId].classList.remove("focused");
-    previousFocusedImgId = currentFocusedImgId;
+    imgDivs.forEach((img) => img.classList.remove("focused"));
   }
 
   return (
