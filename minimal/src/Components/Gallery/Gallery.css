@@ -1,7 +1,7 @@
 .gallery {
   display: flex;
   transform: translateX(-50vw);
-  scrollbar-width: none;
+  width: 100vw;
 }
 
 .gallery__image {
