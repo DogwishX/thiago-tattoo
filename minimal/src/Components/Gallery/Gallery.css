@@ -1,7 +1,11 @@
+.gallery__viewport {
+  max-width: 90vw;
+  margin: auto;
+  overflow: hidden;
+}
+
 .gallery {
   display: flex;
-  transform: translateX(-50vw);
-  width: 100vw;
 }
 
 .gallery__image {

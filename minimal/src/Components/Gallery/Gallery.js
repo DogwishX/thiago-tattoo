@@ -6,7 +6,7 @@ function Gallery({ images }) {
   const [automaticScroll, setAutomaticScroll] = useState(true);
   // useEffect(() => {
   if (automaticScroll) {
-    setTimeout(() => {
+    const automaticScrollTimeout = setTimeout(() => {
       const imgDivs = document.querySelectorAll(".gallery__image");
       if (focusedImg === imgDivs.length - 2) setFocusedImg(3);
       else if (focusedImg === 1) setFocusedImg(imgDivs.length - 2);
@@ -17,9 +17,9 @@ function Gallery({ images }) {
   }
 
   function handleClick({ currentTarget }) {
-    clearTimeout();
-    setAutomaticScroll(false);
+    clearTimeout(automaticScroll);
     setFocusedImg(currentTarget.id);
+    setAutomaticScroll(false);
     loopCarousel(currentTarget);
   }
 
@@ -32,14 +32,14 @@ function Gallery({ images }) {
       changeFocus(currentImgId, imgDivs);
       return setTimeout(
         () => changeFocus(imgDivs.length - 3, imgDivs, false, -loopImgOffset),
-        400
+        1000
       );
     }
     if (currentImgId === imgDivs.length - 2) {
       changeFocus(currentImgId, imgDivs);
       return setTimeout(
         () => changeFocus(2, imgDivs, false, loopImgOffset),
-        400
+        1000
       );
     }
 
@@ -52,14 +52,14 @@ function Gallery({ images }) {
   }
 
   function focusImage(currentTarget, transition, additionalOffset) {
-    const middleOfScreen = window.innerWidth / 2;
+    const middleOfParentElement = currentTarget.parentNode.clientWidth / 2;
     const imgOffset =
       -(currentTarget.width * currentTarget.id) +
-      middleOfScreen -
+      middleOfParentElement -
       currentTarget.width / 2;
     const transformArgs = `transform: translateX(${
       transition ? imgOffset : imgOffset + additionalOffset
-    }px); transition: ${transition ? `all 0.4s ease-in-out` : "none"}`;
+    }px); transition: ${transition ? `all 1s ease-in-out` : "none"}`;
     currentTarget.classList.add("focused");
     currentTarget.parentNode.style = transformArgs;
   }
@@ -69,18 +69,20 @@ function Gallery({ images }) {
   }
 
   return (
-    <div className="gallery">
-      {images.map((src, index) => (
-        <img
-          id={index}
-          key={index}
-          className="gallery__image"
-          data-testid="gallery__image"
-          src={src}
-          alt={`tattoo ${index + 1}`}
-          onClick={handleClick}
-        />
-      ))}
+    <div className="gallery__viewport">
+      <div className="gallery">
+        {images.map((src, index) => (
+          <img
+            id={index}
+            key={index}
+            className="gallery__image"
+            data-testid="gallery__image"
+            src={src}
+            alt={`tattoo ${index + 1}`}
+            onClick={handleClick}
+          />
+        ))}
+      </div>
     </div>
   );
 }
