@@ -12,30 +12,30 @@ function Gallery({ images }) {
     if (currentImgId === 1) {
       changeFocus(currentImgId, imgDivs);
       return setTimeout(
-        () => changeFocus(imgDivs.length - 3, imgDivs, false),
-        450
+        () => changeFocus(imgDivs.length - 3, imgDivs, false, -22),
+       420
       );
     }
     if (currentImgId === imgDivs.length - 2) {
       changeFocus(currentImgId, imgDivs);
-      return setTimeout(() => changeFocus(2, imgDivs, false), 500);
+      return setTimeout(() => changeFocus(2, imgDivs, false, 22), 420);
     }
 
     return changeFocus(currentImgId, imgDivs);
   }
 
-  function changeFocus(divId, imgDivs, transition = true) {
+  function changeFocus(divId, imgDivs, transition = true, additionalOffset) {
     removeFocusFromImgs(imgDivs);
-    focusImage(imgDivs[divId], transition);
+    focusImage(imgDivs[divId], transition, additionalOffset);
   }
 
-  function focusImage(currentTarget, transition) {
+  function focusImage(currentTarget, transition, additionalOffset) {
     const middleOfScreen = window.innerWidth / 2;
     const imgOffset =
       -(currentTarget.width * currentTarget.id) +
       middleOfScreen -
       currentTarget.width / 2;
-    const transformArgs = `transform: translateX(${imgOffset}px); transition: ${
+    const transformArgs = `transform: translateX(${transition? imgOffset : imgOffset + additionalOffset}px); transition: ${
       transition ? `all 0.4s ease-in-out` : "none"
     }`;
     currentTarget.classList.add("focused");
