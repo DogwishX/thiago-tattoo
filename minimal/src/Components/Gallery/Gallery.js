@@ -3,7 +3,9 @@ import "./Gallery.css";
 
 function Gallery({ images }) {
   const [focusedImg, setFocusedImg] = useState(3);
-  useEffect(() => {
+  const [automaticScroll, setAutomaticScroll] = useState(true);
+  // useEffect(() => {
+  if (automaticScroll) {
     setTimeout(() => {
       const imgDivs = document.querySelectorAll(".gallery__image");
       if (focusedImg === imgDivs.length - 2) setFocusedImg(3);
@@ -12,10 +14,11 @@ function Gallery({ images }) {
       loopCarousel(imgDivs[focusedImg]);
       console.log(focusedImg);
     }, 3000);
-  }, [focusedImg]);
+  }
 
   function handleClick({ currentTarget }) {
     clearTimeout();
+    setAutomaticScroll(false);
     setFocusedImg(currentTarget.id);
     loopCarousel(currentTarget);
   }
