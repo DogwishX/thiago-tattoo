@@ -1,5 +1,6 @@
 import "./App.css";
 import Gallery from "./Components/Gallery/Gallery";
+import PhoneNumber from "./Components/PhoneNumber/PhoneNumber";
 
 const images = [
   "images/5.jpg",
@@ -15,7 +16,12 @@ const images = [
 ];
 
 function App() {
-  return <Gallery images={images} />;
+  return (
+    <>
+      <PhoneNumber number="15551234567" element="header" />
+      {/* <Gallery images={images} />; */}
+    </>
+  );
 }
 
 export default App;

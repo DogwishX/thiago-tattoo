@@ -1,0 +1,36 @@
+.phone__header {
+  background-color: white;
+  width: 100vw;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone__action {
+  cursor: pointer;
+}
+
+.phone__options {
+  flex-direction: column;
+  margin-top: 6rem;
+  justify-content: space-evenly;
+  position: absolute;
+  display: none;
+  z-index: 1;
+}
+
+.phone__options a {
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0.6em 1.2rem;
+  outline: 1px solid rgb(223, 219, 219);
+}
+
+.phone__options a:hover {
+  cursor: pointer;
+  background-color: rgb(243, 243, 243);
+}
