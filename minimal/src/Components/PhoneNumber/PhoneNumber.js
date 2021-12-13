@@ -1,6 +1,21 @@
 import "./PhoneNumber.css";
 
 function PhoneNumber({ number, element }) {
+  function copyToClipboard({ currentTarget }) {
+    navigator.clipboard.writeText(currentTarget.dataset.number);
+    hideOptions();
+    triggerCopyNotification();
+  }
+
+  function triggerCopyNotification() {
+    const notification = document.querySelector(".copy-notification");
+    notification.classList.toggle("copy-notification--visible");
+    setTimeout(
+      () => notification.classList.toggle("copy-notification--visible"),
+      2000
+    );
+  }
+
   function displayOptions() {
     const phoneOptions = document.querySelector(".phone__options");
     phoneOptions.style = "display: flex";
@@ -27,8 +42,11 @@ function PhoneNumber({ number, element }) {
           WhatsApp
         </a>
         <a href={`tel: +${number}`}>Call</a>
-        <a onClick={copyToClipboard}>Copy</a>
+        <a onClick={copyToClipboard} data-number={`+${number}`}>
+          Copy
+        </a>
       </div>
+      <div className="copy-notification">Copied number successfully!</div>
     </div>
   );
 }
