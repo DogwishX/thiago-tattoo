@@ -13,7 +13,7 @@
 
 .phone__options {
   flex-direction: column;
-  margin-top: 6rem;
+  margin-top: 8rem;
   justify-content: space-evenly;
   position: absolute;
   display: none;
