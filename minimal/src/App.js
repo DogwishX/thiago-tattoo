@@ -2,6 +2,7 @@ import "./App.css";
 import Gallery from "./Components/Gallery/Gallery";
 import PhoneNumber from "./Components/PhoneNumber/PhoneNumber";
 import Hero from "./Components/Hero/Hero";
+import Section from "./Components/Section/Section";
 
 const images = [
   "images/5.jpg",
@@ -21,7 +22,9 @@ function App() {
     <>
       <PhoneNumber number="15551234567" element="header" />
       <Hero />
-      <Gallery images={images} />;
+      <Section title="Thiago's work">
+        <Gallery images={images} />
+      </Section>
     </>
   );
 }
