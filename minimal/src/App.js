@@ -1,6 +1,7 @@
 import "./App.css";
 import Gallery from "./Components/Gallery/Gallery";
 import PhoneNumber from "./Components/PhoneNumber/PhoneNumber";
+import Hero from "./Components/Hero/Hero";
 
 const images = [
   "images/5.jpg",
@@ -19,7 +20,8 @@ function App() {
   return (
     <>
       <PhoneNumber number="15551234567" element="header" />
-      {/* <Gallery images={images} />; */}
+      <Hero />
+      <Gallery images={images} />;
     </>
   );
 }
