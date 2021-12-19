@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 
 .hero__title {

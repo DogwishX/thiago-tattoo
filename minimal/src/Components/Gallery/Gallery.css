@@ -1,8 +1,7 @@
 .gallery__viewport {
   max-width: 90vw;
-  margin: auto;
   overflow-x: hidden;
-  height:15rem;
+  height: 15rem;
 }
 
 .gallery {

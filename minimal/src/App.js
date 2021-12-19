@@ -22,7 +22,7 @@ function App() {
     <>
       <PhoneNumber number="15551234567" element="header" />
       <Hero />
-      <Section title="Thiago's work">
+      <Section title="Thiago's work" backgroundColor="white">
         <Gallery images={images} />
       </Section>
     </>
