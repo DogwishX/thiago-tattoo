@@ -23,7 +23,7 @@ function App() {
     <>
       <PhoneNumber number="15551234567" element="header" />
       <Hero />
-      <Section title="Artist" backgroundColor="#f6f6f6">
+      <Section title="Artist" backgroundColor="white">
         <Profile />
       </Section>
       <Section title="Thiago's work" backgroundColor="white">
