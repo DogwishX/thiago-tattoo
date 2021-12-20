@@ -1,0 +1,26 @@
+.profile {
+  margin: 2rem;
+  font-family: "Open Sans", arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__image {
+  max-width: 40vh;
+  align-self: center;
+  height: auto;
+}
+
+.profile__name {
+  color: #151515;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 2rem;
+}
+
+.profile__description {
+  color: #707070;
+  font-size: 1.2rem;
+  width: 60%;
+}
