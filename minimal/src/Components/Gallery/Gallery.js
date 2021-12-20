@@ -66,12 +66,13 @@ function Gallery({ images }) {
       currentTarget.id * vw * 2 -
       currentTarget.width / 2;
 
-    const transformArgs = `transform: translateX(${
-      transition ? imgOffset : imgOffset + additionalOffset
-    }px); transition: ${
+    const transformArgs = `transform: translateX(${imgOffset}px); transition: ${
       transition ? `all ${transitionSpeed / 1000}s ease-in-out` : "none"
     }`;
     currentTarget.classList.add("focused");
+    currentTarget.style = `transition: ${
+      transition ? `all .5s ease-in-out` : "none"
+    }`;
     currentTarget.parentNode.style = transformArgs;
   }
 

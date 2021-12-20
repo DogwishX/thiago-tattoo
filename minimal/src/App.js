@@ -29,6 +29,9 @@ function App() {
       <Section title="Thiago's work" backgroundColor="white">
         <Gallery images={images} />
       </Section>
+      <Section title="Social">
+        <a href="https://facebook.com">Facebook</a>
+      </Section>
     </>
   );
 }
