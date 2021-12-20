@@ -6,9 +6,12 @@
 
 .gallery {
   display: flex;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .gallery__image {
+  margin: 0 1vw;
   width: 33vw;
   height: auto;
   opacity: 0.6;

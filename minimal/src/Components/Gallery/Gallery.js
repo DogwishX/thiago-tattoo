@@ -57,12 +57,13 @@ function Gallery({ images }) {
   }
 
   function focusImage(currentTarget, transition, additionalOffset) {
-    const imgMargin = 20;
+    const vw = window.innerWidth / 100;
     const middleOfViewport =
       currentTarget.parentNode.parentNode.clientWidth / 2;
     const imgOffset =
       -(currentTarget.width * currentTarget.id) +
       middleOfViewport -
+      currentTarget.id * vw * 2 -
       currentTarget.width / 2;
 
     const transformArgs = `transform: translateX(${
