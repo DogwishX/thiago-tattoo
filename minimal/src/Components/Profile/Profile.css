@@ -9,6 +9,7 @@
   max-width: 30vh;
   align-self: center;
   height: auto;
+  filter: grayscale(100%);
 }
 
 .profile__name {
