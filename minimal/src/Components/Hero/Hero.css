@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 90%;
 }
 
 .hero__title {
@@ -20,12 +20,12 @@
 }
 
 .hero__image {
-  width: 28rem;
-  height: 25rem;
+  width: 95%;
+  height: auto;
 }
 
 .hero__button {
-  width: 28rem;
+  width: 95%;
   margin: 1rem;
   padding: 1rem;
   text-transform: uppercase;

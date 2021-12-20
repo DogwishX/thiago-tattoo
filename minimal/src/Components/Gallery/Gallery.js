@@ -4,8 +4,9 @@ import "./Gallery.css";
 function Gallery({ images }) {
   const [focusedImg, setFocusedImg] = useState(3);
   const [automaticScroll, setAutomaticScroll] = useState(true);
-  const transitionSpeed = 700
+  const transitionSpeed = 700;
   let automaticScrollTimeout;
+
   useEffect(() => {
     if (automaticScroll) {
       automaticScrollTimeout = setTimeout(() => {
@@ -30,7 +31,7 @@ function Gallery({ images }) {
   function loopCarousel(currentTarget) {
     const imgDivs = document.querySelectorAll(".gallery__image");
     const currentImgId = Number(currentTarget.id);
-    const loopImgOffset = 60;
+    const loopImgOffset = 0;
 
     if (currentImgId === 1) {
       changeFocus(currentImgId, imgDivs);
@@ -56,15 +57,19 @@ function Gallery({ images }) {
   }
 
   function focusImage(currentTarget, transition, additionalOffset) {
-    const middleOfParentElement = currentTarget.parentNode.clientWidth / 2;
+    const imgMargin = 20;
+    const middleOfViewport =
+      currentTarget.parentNode.parentNode.clientWidth / 2;
     const imgOffset =
       -(currentTarget.width * currentTarget.id) +
-      middleOfParentElement -
+      middleOfViewport -
       currentTarget.width / 2;
+
     const transformArgs = `transform: translateX(${
-      transition ? imgOffset : 
-      imgOffset + additionalOffset
-    }px); transition: ${transition ? `all ${transitionSpeed/1000}s ease-in-out` : "none"}`;
+      transition ? imgOffset : imgOffset + additionalOffset
+    }px); transition: ${
+      transition ? `all ${transitionSpeed / 1000}s ease-in-out` : "none"
+    }`;
     currentTarget.classList.add("focused");
     currentTarget.parentNode.style = transformArgs;
   }
