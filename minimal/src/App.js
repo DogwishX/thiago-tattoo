@@ -4,6 +4,7 @@ import PhoneNumber from "./Components/PhoneNumber/PhoneNumber";
 import Hero from "./Components/Hero/Hero";
 import Section from "./Components/Section/Section";
 import Profile from "./Components/Profile/Profile";
+import Social from "./Components/Social/Social";
 
 const images = [
   "images/5.jpg",
@@ -29,8 +30,8 @@ function App() {
       <Section title="Thiago's work" backgroundColor="white">
         <Gallery images={images} />
       </Section>
-      <Section title="Social">
-        <a href="https://facebook.com">Facebook</a>
+      <Section title="Socials">
+        <Social number="15551234567" />
       </Section>
     </>
   );

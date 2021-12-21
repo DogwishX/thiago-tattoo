@@ -1,0 +1,19 @@
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.social__icon {
+  height: 50px;
+  filter: grayscale(40%);
+}
+
+.social__icon--facebook {
+  height: 40px;
+  margin-right: 0.3rem;
+}
+
+.social__icon--instagram {
+  height: 40px;
+}
