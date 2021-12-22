@@ -24,14 +24,14 @@ function App() {
     <>
       <PhoneNumber number="15551234567" element="header" />
       <Hero />
-      <Section title="Artist" backgroundColor="white">
+      <Section className='profile__section' title="Artist" backgroundColor="white">
         <Profile />
-      </Section>
-      <Section title="Thiago's work" backgroundColor="white">
-        <Gallery images={images} />
       </Section>
       <Section title="Socials">
         <Social number="15551234567" />
+      </Section>
+      <Section title="Thiago's work" backgroundColor="white">
+        <Gallery images={images} />
       </Section>
     </>
   );

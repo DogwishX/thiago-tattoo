@@ -3,11 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90%;
+  height: 95%;
 }
 
 .hero__title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 400;
   font-size: 1.7rem;
 }
