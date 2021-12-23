@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
 * {
 }
@@ -6,7 +6,7 @@
 body {
   background-color: #f1f1f1;
   margin: 0;
-  font-family: 'Open Sans', arial, sans-serif;
+  font-family: "Open Sans", arial, sans-serif;
 }
 
 .section__profile {
@@ -15,4 +15,8 @@ body {
 
 .section__social {
   min-height: 18rem !important;
+}
+
+#dermalize .description__text {
+  width: 90%;
 }

@@ -1,18 +1,18 @@
-.profile {
+.description {
   margin: 2rem;
   font-family: "Open Sans", arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-.profile__image {
-  max-width: 30vh;
+.description__image {
+  width: 90%;
   align-self: center;
   height: auto;
   filter: grayscale(100%);
 }
 
-.profile__name {
+.description__name {
   color: #151515;
   font-size: 1.5rem;
   font-weight: 400;
@@ -20,7 +20,7 @@
   margin-top: 2rem;
 }
 
-.profile__description {
+.description__text {
   color: #707070;
   font-size: 1.2rem;
   width: 60%;
