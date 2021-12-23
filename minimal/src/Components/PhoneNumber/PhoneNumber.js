@@ -1,6 +1,6 @@
 import "./PhoneNumber.css";
 
-function PhoneNumber({ number, element }) {
+function PhoneNumber({ number, element, children }) {
   function copyToClipboard({ currentTarget }) {
     navigator.clipboard.writeText(currentTarget.dataset.number);
     hideOptions();
@@ -16,9 +16,10 @@ function PhoneNumber({ number, element }) {
     );
   }
 
-  function displayOptions() {
+  function displayOptions({ pageX, pageY }) {
     const phoneOptions = document.querySelector(".phone__options");
-    phoneOptions.style = "display: flex";
+    phoneOptions.style = `display: flex; top: ${pageY}px; left: ${pageX}px`;
+    console.log(pageX, pageY)
   }
   function hideOptions() {
     const phoneOptions = document.querySelector(".phone__options");
@@ -27,12 +28,12 @@ function PhoneNumber({ number, element }) {
   return (
     <div className={`phone__${element}`}>
       <div className={`phone__action`} onClick={displayOptions}>
-        +{number}
+        {children}
       </div>
       {/* TODO Dropdown menu, giving user option to message in whatsapp or call  */}
       <div
         className="phone__options"
-        onMouseOver={displayOptions}
+        // onMouseOver={displayOptions}
         onMouseLeave={hideOptions}
       >
         <a

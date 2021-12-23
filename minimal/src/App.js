@@ -22,7 +22,7 @@ const images = [
 function App() {
   return (
     <>
-      <PhoneNumber number="15551234567" element="header" />
+      <PhoneNumber number="15551234567" element="header">+15551234567</PhoneNumber>
       <Hero />
       <Section title="Artist" backgroundColor="white">
         <Profile />
