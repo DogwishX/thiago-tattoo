@@ -18,7 +18,7 @@ function PhoneNumber({ number, element, children }) {
 
   function displayOptions({ pageX, pageY }) {
     const phoneOptions = document.querySelector(".phone__options");
-    phoneOptions.style = `display: flex; top: ${pageY}px; left: ${pageX}px`;
+    phoneOptions.style = `display: flex; top: ${pageY - 5}px; left: ${pageX - 5}px`;
     console.log(pageX, pageY)
   }
   function hideOptions() {
@@ -52,3 +52,5 @@ function PhoneNumber({ number, element, children }) {
   );
 }
 export default PhoneNumber;
+
+
