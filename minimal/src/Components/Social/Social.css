@@ -6,14 +6,10 @@
 }
 .social__icon {
   height: 50px;
-  filter: grayscale(40%);
+  filter: grayscale(50%);
 }
 
 .social__icon--facebook {
   height: 40px;
-  margin-right: 0.3rem;
-}
-
-.social__icon--instagram {
-  height: 40px;
+  margin-left: 4px;
 }

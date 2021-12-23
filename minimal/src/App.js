@@ -24,7 +24,7 @@ function App() {
     <>
       <PhoneNumber number="15551234567" element="header" />
       <Hero />
-      <Section className='profile__section' title="Artist" backgroundColor="white">
+      <Section title="Artist" backgroundColor="white">
         <Profile />
       </Section>
       <Section title="Socials">
