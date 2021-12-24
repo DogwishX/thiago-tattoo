@@ -5,7 +5,7 @@ import Hero from "./Components/Hero/Hero";
 import Section from "./Components/Section/Section";
 import Description from "./Components/Description/Description";
 import Social from "./Components/Social/Social";
-import AfterCare from "./Components/AfterCare/AfterCare";
+import Contact from "./Components/Contact/Contact";
 
 const images = [
   "images/5.jpg",
@@ -44,7 +44,9 @@ function App() {
           This will also make it easier to remove it later on.  Any further application of Dermalize can be kept on for a variable amount of time, depending on the client’s need, changing it when you  deem it necessary. The total suggested use time of Dermalize, covering all applications, is between 6 and 7 days. If the Dermalize is hard to pull off the skin, simply let some warm water run under the tattoo film, so that the glue becomes weaker. Making removal of the film is easier. After the removal of the film, the tattoo will be dry. This is normal, and one should the tattoo with some lotion, coconut oil, or bepanthen to avoid alleviate any dryness.
         </Description>
       </Section>
-
+      <Section title='Contact' backgroundColor='white'>
+        <Contact />
+      </Section>
     </>
   );
 }
