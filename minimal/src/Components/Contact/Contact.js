@@ -7,20 +7,22 @@ function Contact() {
     email: false,
   });
   const inputFields = ["name", "email", "message"];
-  useEffect(() => {
-    console.log(displayInputObj);
-  }, [displayInputObj]);
-
-  //   function handleInputsload() {
-  //     const inputList = document.querySelectorAll(".contact__input");
-  //     inputList.forEach((input) => {
-  //       if (input.value === "") input.value = input.dataset.fieldname;
-  //     });
-  //   }
 
   function displayInput({ currentTarget }) {
+    changeDisplayObjState(currentTarget, true);
+    currentTarget.classList.add("contact__input--active");
+  }
+
+  function hideInput({ currentTarget }) {
+    const input = document.querySelector(".contact__input--active > input");
+    if (!input.value) changeDisplayObjState(currentTarget, false);
+    currentTarget.classList.remove("contact__input--active");
+  }
+
+  function changeDisplayObjState(currentTarget, display) {
     const tempObj = { ...displayInputObj };
-    tempObj[currentTarget.dataset.fieldname] = true;
+    const objKey = currentTarget.dataset.fieldname;
+    tempObj[objKey] = display;
     setDisplayInputObj(tempObj);
   }
 
@@ -31,31 +33,43 @@ function Contact() {
           <div
             className="contact__input"
             key={index}
-            onClick={displayInput}
             id={`contact__${item}`}
+            onClick={displayInput}
+            onBlur={hideInput}
             data-testid={`contact__${item}`}
             data-fieldname={item}
           >
-            <p
+            <label
+              htmlFor={`contact__input--${item}`}
               className={
                 displayInputObj[item]
-                  ? `contact__${item}--label`
-                  : `contact__${item}--placeholder`
+                  ? `contact__label`
+                  : `contact__label--placeholder`
               }
-              data-testid={`contact__${item}Placeholder`}
+              data-testid={`contact__label--${item}`}
             >
               {item.slice(0, 1).toUpperCase() + item.slice(1)}
-            </p>
-            {}
-            {displayInputObj[item] ? (
-              <input data-testid={`contact__input--${item}`}></input>
-            ) : (
-              ""
-            )}
+            </label>
+            <Input testid={`contact__input--${item}`}></Input>
           </div>
         ))}
       </form>
     </div>
+  );
+}
+
+function Input({ testid }) {
+  useEffect(() => {
+    const input = document.querySelector(".contact__input--active > input");
+    if (input) input.focus();
+  });
+  return (
+    <input
+      data-testid={testid}
+      id={testid}
+      onBlur={({ currentTarget }) => currentTarget.blur()}
+      type="text"
+    />
   );
 }
 

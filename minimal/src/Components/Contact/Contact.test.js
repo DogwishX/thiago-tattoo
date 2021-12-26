@@ -6,12 +6,12 @@ describe("render", () => {
   afterEach(() => cleanup());
 
   test("name placeholder", () => {
-    const nameInput = screen.getByTestId("contact__namePlaceholder");
+    const nameInput = screen.getByTestId("contact__label--name");
     expect(nameInput.innerHTML).toBe("Name");
   });
 
   test("email placeholder", () => {
-    const emailInput = screen.getByTestId("contact__emailPlaceholder");
+    const emailInput = screen.getByTestId("contact__label--email");
     expect(emailInput.innerHTML).toBe("Email");
   });
 
@@ -30,7 +30,7 @@ describe("interactions", () => {
   test("change input placeholder position on click", () => {
     const nameInput = screen.getByTestId("contact__name");
     fireEvent.click(nameInput);
-    const namePlaceholder = screen.getByTestId("contact__namePlaceholder");
-    expect(namePlaceholder.className).toBe("contact__name--label");
+    const label = screen.getByTestId("contact__label--name");
+    expect(label.className).toBe("contact__label");
   });
 });
