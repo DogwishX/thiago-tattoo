@@ -6,7 +6,7 @@ function Contact() {
     name: false,
     email: false,
   });
-  const inputFields = ["name", "email", "message"];
+  const inputFields = ["name", "email"];
 
   function displayInput({ currentTarget }) {
     changeDisplayObjState(currentTarget, true);
@@ -53,6 +53,7 @@ function Contact() {
             <Input testid={`contact__input--${item}`}></Input>
           </div>
         ))}
+        <textarea placeholder="Message" className="contact__message"></textarea>
       </form>
     </div>
   );
