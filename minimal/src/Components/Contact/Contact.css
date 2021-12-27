@@ -5,3 +5,35 @@
   text-align: center;
   font-family: "Open Sans", arial, sans-serif;
 }
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact__details * {
+  color: #6c6c6c;
+  font-family: "Open Sans", arial, sans-serif;
+}
+.contact__studio-name {
+  text-transform: capitalize;
+  color: #151515;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.contact__phone {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.contact__phone p {
+  margin: 0;
+}
+.contact__details .phone__number {
+  cursor: pointer;
+}

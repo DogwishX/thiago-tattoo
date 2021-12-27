@@ -8,9 +8,11 @@ function Contact() {
     <div id="contact">
       <h2 className="contact__title">Ask a question</h2>
       <Form />
-      <h3 className="contact__studio-name">Thiago Tattoo</h3>
       <div className="contact__details">
-        <p>Phone</p>
+        <h3 className="contact__studio-name">thiago tattoo studio</h3>
+        <p className="contact__address">
+          64 South Great George's Street Dublin
+        </p>
         <PhoneNumber number="15551234567" element="contact">
           +15551234567
         </PhoneNumber>
