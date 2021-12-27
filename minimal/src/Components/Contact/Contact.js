@@ -23,9 +23,38 @@ function Contact() {
 }
 
 function Hours() {
+  const [displayHours, setDisplayHours] = useState(false);
+  function toggleDisplayHours() {
+    setDisplayHours(!displayHours);
+  }
   return (
     <div className="hours">
-      <div className="hours__dropdown"></div>
+      <h1 className="hours__title">Hours</h1>
+      <div className="hours__dropdown" onClick={toggleDisplayHours}>
+        {displayHours ? (
+          <HoursTable />
+        ) : (
+          <p className="hours__today">Opened today from 11:00 - 19:00</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function HoursTable() {
+  const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return (
+    <div className="table">
+      {daysOfWeek.map((day, index) => (
+        <div key={index} className="table__row">
+          <p className="table__day">{day}</p>
+          <p className="table__hours">
+            {day === "Sat" || day === "Sun"
+              ? "By Appointment"
+              : "11:00 – 19:00"}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }

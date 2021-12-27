@@ -37,3 +37,36 @@
 .contact__details .phone__number {
   cursor: pointer;
 }
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hours__today {
+  margin: 0;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+.table__row {
+  display: flex;
+}
+
+.table__row * {
+  margin: 0;
+}
+.table__day {
+  width: 2rem;
+  text-align: right;
+}
+
+.table__hours {
+  /* width: 10rem; */
+  margin-left: 1rem;
+  /* text-align: left; */
+}
