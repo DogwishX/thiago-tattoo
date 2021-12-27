@@ -28,6 +28,7 @@ function Contact() {
 
   return (
     <div id="contact">
+      <h4 className="contact__title">Ask a question</h4>
       <form action="submit" className="contact__form">
         {inputFields.map((item, index) => (
           <div
@@ -53,7 +54,18 @@ function Contact() {
             <Input testid={`contact__input--${item}`}></Input>
           </div>
         ))}
-        <textarea placeholder="Message" className="contact__message"></textarea>
+        <textarea
+          placeholder="Message"
+          className="contact__message"
+          required
+        ></textarea>
+        <div className="contact__checkbox">
+          <input id="newsletter-checkbox" type="checkbox" />
+          <label htmlFor="newsletter-checkbox">
+            Sign up for our email list for updates, promotions, and more.
+          </label>
+        </div>
+        <button className="contact__submit">send</button>
       </form>
     </div>
   );
@@ -69,7 +81,8 @@ function Input({ testid }) {
       data-testid={testid}
       id={testid}
       onBlur={({ currentTarget }) => currentTarget.blur()}
-      type="text"
+      type={/email/gi.test(testid) ? "email" : "text"}
+      required
     />
   );
 }
