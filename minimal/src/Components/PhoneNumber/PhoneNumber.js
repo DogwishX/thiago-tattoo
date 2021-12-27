@@ -18,7 +18,9 @@ function PhoneNumber({ number, element, children }) {
 
   function displayOptions({ pageX, pageY }) {
     const phoneOptions = document.querySelector(".phone__options");
-    phoneOptions.style = `display: flex; top: ${pageY - 5}px; left: ${pageX - 5}px`;
+    phoneOptions.style = `display: flex; top: ${pageY - 5}px; left: ${
+      pageX - 5
+    }px`;
   }
   function hideOptions() {
     const phoneOptions = document.querySelector(".phone__options");
@@ -26,15 +28,10 @@ function PhoneNumber({ number, element, children }) {
   }
   return (
     <div className={`phone__${element}`}>
-      <div className={`phone__action`} onClick={displayOptions}>
+      <div className={`phone__number`} onClick={displayOptions}>
         {children}
       </div>
-      {/* TODO Dropdown menu, giving user option to message in whatsapp or call  */}
-      <div
-        className="phone__options"
-        // onMouseOver={displayOptions}
-        onMouseLeave={hideOptions}
-      >
+      <div className="phone__options" onMouseLeave={hideOptions}>
         <a
           href={`https://wa.me/${number}?text=I'm%20interested%20in%20booking%20a%20tattoo%20appointment%20with%20you`}
           target="_blank"
@@ -51,5 +48,3 @@ function PhoneNumber({ number, element, children }) {
   );
 }
 export default PhoneNumber;
-
-
