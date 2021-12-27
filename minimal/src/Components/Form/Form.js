@@ -15,7 +15,7 @@ function Form() {
 
   function hideInput({ currentTarget }) {
     const input = document.querySelector(".contact__input--active > input");
-    if (!input.value) changeDisplayObjState(currentTarget, false);
+    if (input && !input.value) changeDisplayObjState(currentTarget, false);
     currentTarget.classList.remove("contact__input--active");
   }
 
@@ -46,7 +46,7 @@ function Form() {
           >
             {item.slice(0, 1).toUpperCase() + item.slice(1)}
           </label>
-          <Input testid={`form__input--${item}`}></Input>
+          <Input testid={`form__input--${item}`} item={item}></Input>
         </div>
       ))}
       <textarea
@@ -55,7 +55,7 @@ function Form() {
         required
       ></textarea>
       <div className="form__checkbox">
-        <input id="newsletter-checkbox" type="checkbox" />
+        <input id="newsletter-checkbox" name="newsletter" type="checkbox" />
         <label htmlFor="newsletter-checkbox">
           Sign up for our email list for updates, promotions, and more.
         </label>
@@ -65,7 +65,7 @@ function Form() {
   );
 }
 
-function Input({ testid }) {
+function Input({ testid, item }) {
   useEffect(() => {
     const input = document.querySelector(".contact__input--active > input");
     if (input) input.focus();
@@ -73,9 +73,10 @@ function Input({ testid }) {
   return (
     <input
       data-testid={testid}
+      name={item}
       id={testid}
       onBlur={({ currentTarget }) => currentTarget.blur()}
-      type={/email/gi.test(testid) ? "email" : "text"}
+      type={item === "email" ? "email" : "text"}
       required
     />
   );

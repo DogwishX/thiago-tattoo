@@ -81,6 +81,7 @@
 }
 
 .form__checkbox label {
+  color: #606060;
   font-size: 1.2rem;
   margin-left: 1rem;
 }
