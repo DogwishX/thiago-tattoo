@@ -34,7 +34,23 @@ function Hours() {
         {displayHours ? (
           <HoursTable />
         ) : (
-          <p className="hours__today">Opened today from 11:00 - 19:00</p>
+          <p className="hours__today">
+            Opened today from 11:00 - 19:00{" "}
+            <svg
+              className="hours__arrow"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="16"
+              height="16"
+              data-ux="Icon"
+              class="x-el x-el-svg c2-1 c2-2 c2-39 c2-25 c2-6n c2-80 c2-26 c2-m c2-6p c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M19.544 7.236a.773.773 0 0 1-.031 1.06l-7.883 7.743-7.42-7.742a.773.773 0 0 1 0-1.061.699.699 0 0 1 1.017 0l6.433 6.713 6.868-6.745a.698.698 0 0 1 1.016.032"
+              ></path>
+            </svg>
+          </p>
         )}
       </div>
     </div>
@@ -43,10 +59,17 @@ function Hours() {
 
 function HoursTable() {
   const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const today = new Date().toLocaleDateString("en-gb", { weekday: "short" });
+
   return (
     <div className="table">
       {daysOfWeek.map((day, index) => (
-        <div key={index} className="table__row">
+        <div
+          key={index}
+          className={
+            today === day ? "table__row table__row--active" : "table__row"
+          }
+        >
           <p className="table__day">{day}</p>
           <p className="table__hours">
             {day === "Sat" || day === "Sun"
@@ -55,6 +78,19 @@ function HoursTable() {
           </p>
         </div>
       ))}
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        width="16"
+        height="16"
+        data-ux="Icon"
+        class="x-el x-el-svg c2-1 c2-2 c2-39 c2-25 c2-6n c2-80 c2-26 c2-m c2-6p c2-3 c2-4 c2-5 c2-6 c2-7 c2-8"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M19.544 7.236a.773.773 0 0 1-.031 1.06l-7.883 7.743-7.42-7.742a.773.773 0 0 1 0-1.061.699.699 0 0 1 1.017 0l6.433 6.713 6.868-6.745a.698.698 0 0 1 1.016.032"
+        ></path>
+      </svg>
     </div>
   );
 }

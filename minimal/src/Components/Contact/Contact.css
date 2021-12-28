@@ -39,10 +39,18 @@
 }
 
 .hours {
+  user-select: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.hours svg {
+  cursor: pointer;
+}
+.hours__dropdown {
+  position: relative;
 }
 
 .hours__today {
@@ -50,6 +58,7 @@
 }
 
 .table {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -60,13 +69,21 @@
 .table__row * {
   margin: 0;
 }
+
+.table__row--active {
+  font-weight: 600;
+}
 .table__day {
   width: 2rem;
   text-align: right;
 }
 
 .table__hours {
-  /* width: 10rem; */
   margin-left: 1rem;
-  /* text-align: left; */
+}
+
+.table svg {
+  position: absolute;
+  top: 0;
+  right: -1rem;
 }
