@@ -1,10 +1,16 @@
 .nav {
-  height: 100vh;
+  height: 10vh;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu__icon {
   opacity: 0.8;
+}
+
+.menu__icon--active {
+  z-index: 2;
 }
 
 .menu__icon:hover {
@@ -21,6 +27,10 @@
   transition: all 0.5s;
 }
 
+.menu__icon--active * {
+  background-color: white;
+}
+
 .menu__icon--active .menu__icon--top {
   transform: rotate(45deg) translateY(290%);
 }
@@ -31,4 +41,14 @@
 }
 .menu__icon--active .menu__icon--bot {
   transform: rotate(-45deg) translateY(-290%);
+}
+
+.menu__items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 }

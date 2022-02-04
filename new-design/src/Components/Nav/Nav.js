@@ -5,6 +5,7 @@ import "./Nav.css";
 function Nav() {
   return (
     <div className="nav">
+      LOGO
       <Menu />
     </div>
   );
@@ -23,6 +24,7 @@ function Menu() {
         <span className="menu__icon--mid"></span>
         <span className="menu__icon--bot"></span>
       </div>
+      {isMenuOpen && <div className="menu__items"></div>}
     </div>
   );
 }
