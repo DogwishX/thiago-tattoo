@@ -44,11 +44,20 @@
 }
 
 .menu__items {
+  background-color: black;
   position: absolute;
   top: 0;
-  left: 0;
-  background-color: black;
+  right: -100vw;
   width: 100%;
   height: 100vh;
   z-index: -1;
+  animation: menu-items-show 0.5s forwards;
+}
+
+/* Animations */
+
+@keyframes menu-items-show {
+  to {
+    right: 0;
+  }
 }
