@@ -1,10 +1,10 @@
 import "./App.css";
-import Nav from "./Components/Nav";
+import ArrowDown from "./Components/ArrowDown";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <ArrowDown />
     </div>
   );
 }

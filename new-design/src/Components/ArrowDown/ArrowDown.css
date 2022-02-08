@@ -1,0 +1,26 @@
+.arrow-down {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: arrow-down-animate 0.8s alternate infinite ease-in-out;
+}
+
+.arrow-down__svg {
+  width: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: black;
+}
+
+.arrow-down__polygon {
+  transform: scale(0.5);
+}
+
+@keyframes arrow-down-animate {
+  to {
+    margin-top: 5px;
+  }
+}
