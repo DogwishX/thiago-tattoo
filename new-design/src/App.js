@@ -1,12 +1,7 @@
 import "./App.css";
-import ArrowDown from "./Components/ArrowDown";
 
 function App() {
-  return (
-    <div className="App">
-      <ArrowDown />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
