@@ -1,0 +1,20 @@
+.quote__text {
+  font-weight: 300;
+}
+
+.quote__author {
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.quote__author::before {
+  content: "";
+  display: inline-block;
+  content: 0;
+  height: 1px;
+  width: 10px;
+  margin: 0 0.8rem 0.2rem;
+  background-color: rgb(158, 157, 157);
+}
