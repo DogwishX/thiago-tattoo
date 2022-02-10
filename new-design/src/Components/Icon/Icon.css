@@ -1,0 +1,15 @@
+.icon {
+  background-color: black;
+  transform: rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  width: 23px;
+  height: 23px;
+  border-radius: 5px;
+}
+
+.icon__fontawesome {
+  transform: scale(0.8) rotate(-45deg);
+}

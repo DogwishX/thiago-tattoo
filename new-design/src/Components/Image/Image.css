@@ -1,0 +1,21 @@
+:root {
+  --image-height: 90vw;
+}
+
+.image {
+  background-color: black;
+  width: fit-content;
+  max-height: var(--image-height);
+}
+.image__img {
+  max-height: var(--image-height);
+}
+
+.image__img:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.image:hover {
+  transform: scale(1.015);
+}
