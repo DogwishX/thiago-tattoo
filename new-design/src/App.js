@@ -1,10 +1,11 @@
 import "./App.css";
-import Map from "./Components/Map";
+import MenuItem from "./Components/MenuItem";
 
 function App() {
   return (
     <div className="App">
-      <Map />
+      <MenuItem item="home" />
+      <MenuItem item="test" />
     </div>
   );
 }
