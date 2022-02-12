@@ -1,18 +1,12 @@
-import { useState } from "react";
-import useToggle from "../../../hooks/useToggle";
+import useToggle from "../../hooks/useToggle";
+import MenuItem from "../MenuItem";
 import "./Menu.css";
 
-function Menu() {
+function Menu({ id, items }) {
   const [isMenuOpen, toggleIsMenuOpen] = useToggle(false);
 
   return (
-    <div className="menu">
-      <MenuIcon />
-    </div>
-  );
-
-  function MenuIcon() {
-    return (
+    <div className="menu" id={id}>
       <div
         className={`menu__icon${isMenuOpen ? " menu__icon--active" : ""}`}
         onClick={toggleIsMenuOpen}
@@ -21,11 +15,15 @@ function Menu() {
         <span className="menu__icon--mid"></span>
         <span className="menu__icon--bot"></span>
       </div>
-    );
-    {
-      isMenuOpen && <div className="menu__items"></div>;
-    }
-  }
+      {isMenuOpen && (
+        <div className="menu__items">
+          {items.map((item) => (
+            <MenuItem item={item} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Menu;
