@@ -1,4 +1,9 @@
 .hero {
-  background-image: url("../../../public/hero-bg.jpg");
+  background-image: url("hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 100vh;
+  -webkit-box-shadow: inset 0px 0px 50px 14px rgba(0, 0, 0, 0.73);
+  box-shadow: inset 0px 0px 30vh 20px rgba(0, 0, 0, 0.73);
 }
