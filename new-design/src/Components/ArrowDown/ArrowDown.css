@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: black;
+  fill: white;
 }
 
 .arrow-down__polygon {
@@ -21,6 +21,6 @@
 
 @keyframes arrow-down-animate {
   to {
-    margin-top: 5px;
+    bottom: 10px;
   }
 }
