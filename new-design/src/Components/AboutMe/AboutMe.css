@@ -1,0 +1,13 @@
+.about {
+  width: 95%;
+}
+
+#about__quote {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.about__text {
+  margin-left: 1rem;
+  font-size: 0.96rem;
+}

@@ -12,3 +12,10 @@ p {
   font-weight: 300;
   font-family: "Open Sans", arial, sans-serif;
 }
+
+hr {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  width: 50%;
+}
