@@ -1,12 +1,1 @@
-:root {
-  --logo-width: 60px;
-}
 
-.logo {
-  max-width: var(--logo-width);
-  max-height: var(--logo-width);
-}
-
-.logo img {
-  max-width: var(--logo-width);
-}
