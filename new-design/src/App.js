@@ -5,12 +5,16 @@ import WhatIOffer from "./Components/WhatIOffer";
 import Map from "./Components/Map";
 import Contact from "./Components/Contact";
 import Socials from "./Components/Socials";
+import Footer from "./Components/Footer";
+import Gallery from "./Components/Gallery";
 
 function App() {
   return (
     <div className="App">
       <Hero />
       <AboutMe />
+      <hr />
+      <Gallery />
       <hr />
       <WhatIOffer />
       <hr />
@@ -19,6 +23,7 @@ function App() {
       <Contact />
       <hr />
       <Socials />
+      <Footer />
     </div>
   );
 }
