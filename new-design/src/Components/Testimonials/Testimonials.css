@@ -1,4 +1,8 @@
 .testimonials {
+  position: relative;
+}
+
+.testimonials__cards {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -13,7 +17,7 @@
   background-color: black;
 }
 
-.testimonials * {
+.testimonials__cards * {
   color: white;
 }
 
@@ -45,4 +49,12 @@
   width: 90%;
   text-align: center;
   margin: 0 auto;
+}
+
+.testimonials__buttons {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  z-index: 1;
 }

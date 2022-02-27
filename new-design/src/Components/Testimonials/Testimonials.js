@@ -3,34 +3,47 @@ import Title from "../Core/Title";
 import Icon from "../Icon";
 import "./Testimonials.css";
 
-function Testimonials({}) {
+function Testimonials() {
   const [scrollPositions, setScrollPositions] = useState({
     leftScroll: 0,
     clientX: 0,
   });
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [focusedCard, setFocusedCard] = useState(0);
-  const [changedCardTriggered, setChangedCardTriggered] = useState(false);
-  const testimonials = [{ a: "b" }, { a: "b" }, { a: "b" }];
   return (
-    <div
-      className="testimonials"
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-    >
-      <Card
-        author="tina"
-        text="We got exactly what we wanted for a fair price and they’ve healed beautifully, so we 100% happy with our choice to use Ink and Iron"
-      />
-      <Card
-        author="tina"
-        text="We got exactly what we wanted for a fair price and they’ve healed beautifully, so we 100% happy with our choice to use Ink and Iron"
-      />
-      <Card
-        author="tina"
-        text="We got exactly what we wanted for a fair price and they’ve healed beautifully, so we 100% happy with our choice to use Ink and Iron"
-      />
+    <div className="testimonials">
+      <div
+        className="testimonials__cards"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+      >
+        <Card
+          id="1"
+          author="tina"
+          text="We got exactly what we wanted for a fair price and they’ve healed beautifully, so we 100% happy with our choice to use Ink and Iron"
+        />
+        <Card
+          author="tina"
+          text="We got exactly what we wanted for a fair price and they’ve healed beautifully, so we 100% happy with our choice to use Ink and Iron"
+        />
+        <Card
+          id="3"
+          author="tina"
+          text="We got exactly what we wanted for a fair price and they’ve healed beautifully, so we 100% happy with our choice to use Ink and Iron"
+        />
+      </div>
+      <div className="testimonials__buttons">
+        <button data-card="0" onClick={displayCard}>
+          1
+        </button>
+        <button data-card="1" onClick={displayCard}>
+          2
+        </button>
+        <button data-card="2" onClick={displayCard}>
+          3
+        </button>
+      </div>
     </div>
   );
 
@@ -39,28 +52,27 @@ function Testimonials({}) {
     setScrollPositions({ leftScroll: currentTarget.scrollLeft, clientX });
   }
   function handleMouseMove({ currentTarget, clientX }) {
-    if (changedCardTriggered) return;
-    if (focusedCard < 0) return setFocusedCard(0);
-    if (focusedCard >= testimonials.length)
-      return setFocusedCard(testimonials.length - 1);
+    const distanceX = clientX - scrollPositions.clientX;
     if (isMouseDown) {
-      const distanceX = clientX - scrollPositions.clientX;
-      distanceX > 0
-        ? setFocusedCard(focusedCard - 1)
-        : setFocusedCard(focusedCard + 1);
-      currentTarget.scrollLeft = window.innerWidth * focusedCard;
-      return setChangedCardTriggered(true);
+      currentTarget.scrollLeft =
+        scrollPositions.leftScroll +
+        (distanceX > 0 ? -window.innerWidth : +window.innerWidth);
     }
   }
   function handleMouseUp() {
     setIsMouseDown(false);
-    setChangedCardTriggered(false);
+  }
+
+  function displayCard({ currentTarget }) {
+    const testimonialsCardsDiv = document.querySelector(".testimonials__cards");
+    testimonialsCardsDiv.scrollLeft =
+      window.innerWidth * currentTarget.dataset.card;
   }
 }
 
-function Card({ text, author }) {
+function Card({ text, author, id }) {
   return (
-    <blockquote className="testimonials__card">
+    <blockquote className="testimonials__card" id={id}>
       <Icon icon="faQuoteRight" color="white" id="testimonials__icon" />
       <Title id="testimonials__title">what people say?</Title>
       <p className="testimonials__text">"{text}"</p>
