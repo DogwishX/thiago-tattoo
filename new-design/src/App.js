@@ -1,4 +1,5 @@
 import "./App.css";
+import Nav from "./Components/Nav";
 import AboutMe from "./Components/AboutMe";
 import Hero from "./Components/Hero";
 import WhatIOffer from "./Components/WhatIOffer";
@@ -12,6 +13,7 @@ import Testimonials from "./Components/Testimonials";
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Hero />
       <AboutMe />
       <hr />

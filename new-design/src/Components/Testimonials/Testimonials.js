@@ -4,12 +4,20 @@ import Icon from "../Icon";
 import "./Testimonials.css";
 
 function Testimonials() {
+  // States
   const [scrollPositions, setScrollPositions] = useState({
     leftScroll: 0,
     clientX: 0,
   });
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [focusedCard, setFocusedCard] = useState(0);
+  const testimonials = [{ 0: 1 }, { 0: 1 }, { 0: 1 }];
+
+  useEffect(() => {
+    const testimonialsDiv = document.querySelector(".testimonials");
+    testimonialsDiv.addEventListener("wheel", preventScroll);
+  }, []);
+
   return (
     <div className="testimonials">
       <div
@@ -61,6 +69,12 @@ function Testimonials() {
   }
   function handleMouseUp() {
     setIsMouseDown(false);
+  }
+
+  function preventScroll(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
   }
 
   function displayCard({ currentTarget }) {
