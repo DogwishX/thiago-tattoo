@@ -7,6 +7,7 @@ import Contact from "./Components/Contact";
 import Socials from "./Components/Socials";
 import Footer from "./Components/Footer";
 import Gallery from "./Components/Gallery";
+import Testimonials from "./Components/Testimonials";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Gallery />
       <hr />
       <WhatIOffer />
+      <hr />
+      <Testimonials />
       <hr />
       <Map coords={[-8.74907, -63.88753]} />
       <hr />
