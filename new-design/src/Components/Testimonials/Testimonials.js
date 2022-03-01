@@ -42,15 +42,9 @@ function Testimonials() {
         />
       </div>
       <div className="testimonials__buttons">
-        <button data-card="0" onClick={displayCard}>
-          1
-        </button>
-        <button data-card="1" onClick={displayCard}>
-          2
-        </button>
-        <button data-card="2" onClick={displayCard}>
-          3
-        </button>
+        <button data-card="0" onClick={displayCard}></button>
+        <button data-card="1" onClick={displayCard}></button>
+        <button data-card="2" onClick={displayCard}></button>
       </div>
     </div>
   );
