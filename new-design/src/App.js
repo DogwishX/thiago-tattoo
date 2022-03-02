@@ -23,7 +23,7 @@ function App() {
       <Hero />
       <AboutMe />
       <hr />
-      <Gallery imgs={imgs} />
+      <Gallery images={imgs} />
       <hr />
       <WhatIOffer />
       <hr />
