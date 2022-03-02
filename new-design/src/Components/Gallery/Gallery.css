@@ -4,6 +4,7 @@
 
 .gallery__viewport {
   display: flex;
+  transition: all 1s ease-in-out;
 }
 
 .gallery__image {
