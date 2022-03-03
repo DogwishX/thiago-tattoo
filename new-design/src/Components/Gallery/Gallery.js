@@ -6,41 +6,67 @@ function Gallery({ images }) {
   const [prevClientX, setPrevClientX] = useState(0);
   const [focusedImg, setFocusedImg] = useState(0);
   const [hasImgChanged, setHasImgChanged] = useState(false);
-  const [automaticScroll, setAutomaticScroll] = useState(true);
-  let automaticScrollTimeout;
+  const [galleryOffsetLeft, setGalleryOffsetLeft] = useState(0);
 
   useEffect(() => {
-    if (automaticScroll) {
-      automaticScrollTimeout = setTimeout(changeFocusedImg, 3000);
-    }
-    return function cleanup() {
-      clearTimeout(automaticScrollTimeout);
-    };
+    displayFocusedImg();
   }, [focusedImg]);
 
-  function changeFocusedImg(addOrSubtract = 1) {
-    if (focusedImg >= images.length) {
-      setFocusedImg(0);
-      displayFocusedImg();
-      return;
-    }
-    if (focusedImg < 0) {
-      setFocusedImg(images.length - 1);
-      displayFocusedImg();
-      return;
-    }
-    setFocusedImg(focusedImg + addOrSubtract);
-    displayFocusedImg();
-  }
-
   function displayFocusedImg() {
+    const galleryViewport = document.querySelector(".gallery__viewport");
     const imageNodeList = document.querySelectorAll(".gallery__image");
     if (imageNodeList[focusedImg]) {
       imageNodeList.forEach((image) => image.classList.remove("focused"));
       imageNodeList[focusedImg].classList.add("focused");
+      galleryViewport.style = `transform: translateX(${galleryOffsetLeft}px)`;
     }
   }
 
+  function handleMouseDown({ currentTarget, clientX }) {
+    setIsMouseDown(true);
+    setPrevClientX(clientX);
+  }
+  function handleMouseMove({ clientX }) {
+    if (isMouseDown && !hasImgChanged) {
+      const distanceX = clientX - prevClientX;
+
+      if (distanceX > 0) {
+        focusedImg - 1 <= -1
+          ? applyOffset(images.length - 1, "left")
+          : applyOffset(focusedImg - 1, "left");
+      } else {
+        focusedImg + 1 >= images.length
+          ? applyOffset(0, "right")
+          : applyOffset(focusedImg + 1, "right");
+      }
+
+      setHasImgChanged(true);
+    }
+  }
+
+  function applyOffset(index, direction) {
+    setFocusedImg(index);
+    const imageNodeList = document.querySelectorAll(".gallery__image");
+    const focusedImgWidth = imageNodeList[focusedImg].width;
+    if (focusedImg === 0 && direction === "left") {
+      const sumOfImagesWidth = [...imageNodeList].reduce(
+        (sum, currentImage) => sum + currentImage.width,
+        0
+      );
+      return setGalleryOffsetLeft(-sumOfImagesWidth);
+    }
+    if (focusedImg === images.length - 1 && direction === "right")
+      return setGalleryOffsetLeft(0);
+
+    direction === "left"
+      ? setGalleryOffsetLeft(galleryOffsetLeft + focusedImgWidth)
+      : setGalleryOffsetLeft(galleryOffsetLeft - focusedImgWidth);
+  }
+
+  function handleMouseUp() {
+    setIsMouseDown(false);
+    setHasImgChanged(false);
+  }
   return (
     <div
       className="gallery"
@@ -61,27 +87,6 @@ function Gallery({ images }) {
       </div>
     </div>
   );
-
-  function handleMouseDown({ currentTarget, clientX }) {
-    setIsMouseDown(true);
-    setPrevClientX(clientX);
-    setAutomaticScroll(false);
-  }
-  function handleMouseMove({ clientX }) {
-    if (isMouseDown && !hasImgChanged) {
-      const distanceX = prevClientX - clientX;
-      distanceX > 0 ? changeFocusedImg() : changeFocusedImg(-1);
-      setHasImgChanged(true);
-    }
-  }
-  function handleMouseUp() {
-    setIsMouseDown(false);
-    setHasImgChanged(false);
-    setTimeout(() => {
-      setAutomaticScroll(true);
-      changeFocusedImg();
-    }, 7000);
-  }
 }
 
 export default Gallery;
