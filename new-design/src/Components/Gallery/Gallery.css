@@ -1,19 +1,5 @@
-.gallery {
-  cursor: grab;
-}
+@import "~react-image-gallery/styles/css/image-gallery.css";
 
-.gallery__viewport {
-  display: flex;
-  transition: all 1s ease-in-out;
-}
-
-.gallery__image {
-  max-width: 10rem;
-  height: auto;
-  padding: 1rem;
-  transition: all 0.1s ease-in-out;
-}
-
-.focused {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+#gallery__title {
+  font-weight: 400;
 }
