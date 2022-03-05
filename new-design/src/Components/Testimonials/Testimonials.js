@@ -11,12 +11,25 @@ function Testimonials() {
   });
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [focusedCard, setFocusedCard] = useState(0);
+  const [hasCardChanged, setHasCardChanged] = useState(false);
   const testimonials = [{ 0: 1 }, { 0: 1 }, { 0: 1 }];
 
   useEffect(() => {
     const testimonialsDiv = document.querySelector(".testimonials");
     testimonialsDiv.addEventListener("wheel", preventScroll);
   }, []);
+
+  useEffect(() => {
+    const testimonialsCardsDiv = document.querySelector(".testimonials__cards");
+    const testimonialsButtonsDiv = document.querySelectorAll(
+      ".testimonials__button"
+    );
+    testimonialsButtonsDiv.forEach((button) =>
+      button.classList.remove("focused")
+    );
+    testimonialsCardsDiv.scrollLeft = window.innerWidth * focusedCard;
+    testimonialsButtonsDiv[focusedCard].classList.add("focused");
+  }, [focusedCard]);
 
   return (
     <div className="testimonials">
@@ -42,9 +55,21 @@ function Testimonials() {
         />
       </div>
       <div className="testimonials__buttons">
-        <button data-card="0" onClick={displayCard}></button>
-        <button data-card="1" onClick={displayCard}></button>
-        <button data-card="2" onClick={displayCard}></button>
+        <div
+          className="testimonials__button"
+          data-card="0"
+          onClick={displayCard}
+        ></div>
+        <div
+          className="testimonials__button"
+          data-card="1"
+          onClick={displayCard}
+        ></div>
+        <div
+          className="testimonials__button"
+          data-card="2"
+          onClick={displayCard}
+        ></div>
       </div>
     </div>
   );
@@ -55,14 +80,26 @@ function Testimonials() {
   }
   function handleMouseMove({ currentTarget, clientX }) {
     const distanceX = clientX - scrollPositions.clientX;
-    if (isMouseDown) {
-      currentTarget.scrollLeft =
-        scrollPositions.leftScroll +
-        (distanceX > 0 ? -window.innerWidth : +window.innerWidth);
+    if (isMouseDown && !hasCardChanged) {
+      let windowWidth;
+
+      if (distanceX > 0) {
+        if (focusedCard - 1 < 0) return;
+        setFocusedCard(focusedCard - 1);
+        windowWidth = -window.innerWidth;
+      } else {
+        if (focusedCard + 1 >= testimonials.length) return;
+        setFocusedCard(focusedCard + 1);
+        windowWidth = window.innerWidth;
+      }
+
+      currentTarget.scrollLeft = scrollPositions.leftScroll + windowWidth;
+      setHasCardChanged(true);
     }
   }
   function handleMouseUp() {
     setIsMouseDown(false);
+    setHasCardChanged(false);
   }
 
   function preventScroll(event) {
@@ -72,9 +109,7 @@ function Testimonials() {
   }
 
   function displayCard({ currentTarget }) {
-    const testimonialsCardsDiv = document.querySelector(".testimonials__cards");
-    testimonialsCardsDiv.scrollLeft =
-      window.innerWidth * currentTarget.dataset.card;
+    setFocusedCard(currentTarget.dataset.card);
   }
 }
 
