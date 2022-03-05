@@ -7,9 +7,11 @@ function Nav() {
   useEffect(() => {
     const nav = document.querySelector(".nav");
     window.addEventListener("scroll", () => {
-      window.scrollY > 10
-        ? nav.classList.add("nav--sticky")
-        : nav.classList.remove("nav--sticky");
+      if (window.scrollY > 15) {
+        return nav.classList.add("nav--sticky");
+      } else {
+        nav.classList.remove("nav--sticky");
+      }
     });
   }, []);
 
