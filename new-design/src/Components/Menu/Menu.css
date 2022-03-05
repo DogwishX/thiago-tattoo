@@ -16,7 +16,6 @@
 .menu__icon * {
   box-sizing: border-box;
   display: block;
-  background-color: black;
   height: 3px;
   width: 22px;
   margin-top: 4px;
@@ -40,18 +39,29 @@
 }
 
 .menu__items {
-  background-color: black;
   position: absolute;
-  left: 0;
-  opacity: 0;
-  top: 10vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  animation: menu-items-show 1s forwards;
+  animation: menu-items-show 0.5s forwards;
+}
+
+.menu__items * {
+  transform: translateY(-50%);
 }
 
 /* Animations */
 @keyframes menu-items-show {
+  from {
+    right: -200%;
+  }
   to {
-    opacity: 1;
+    right: 0;
+    opacity: 0.95;
   }
 }
