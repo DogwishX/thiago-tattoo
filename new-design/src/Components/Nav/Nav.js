@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { ScreenContext } from "../../contexts/ScreenContext";
 import Logo from "../Core/Logo";
 import Menu from "../Menu";
 import "./Nav.css";
 
 function Nav() {
+  const screenSize = useContext(ScreenContext);
+
   useEffect(() => {
     const nav = document.querySelector(".nav");
     window.addEventListener("scroll", () => {
