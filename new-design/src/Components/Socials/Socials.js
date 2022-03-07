@@ -8,8 +8,9 @@ function Socials() {
     <div id="socials">
       <Logo id="socials__logo" />
       <div id="socials__icons">
-        <Icon icon="faContactBook" color="white" />
-        <Icon icon="faContactBook" color="white" />
+        <Icon icon="faFacebookF" color="white" />
+        <Icon icon="faInstagram" color="white" />
+        <Icon icon="faWhatsapp" color="white" />
       </div>
     </div>
   );
